@@ -1,57 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>ShootTheBoss</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <title>ShootTheBoss</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="button">
-    <h1>Пристрели своего директора</h1>
-    <button class="buttonL">Любить</button>
-    <button class="buttonN">Ненавидеть</button>
-    <button class="buttonC">Убрать улики</button>
-    <form id="form" class="form" method="post">
-        <label for="input"></label><input id="input" class="formInput" required type="url"
-                                          placeholder="вставить ссылку на фото директора">
-        <button id="submit" type="submit">Заказать</button>
-    </form>
+  <h1>Пристрели своего директора</h1>
+  <button class="buttonL">Любить</button>
+  <button class="buttonN">Ненавидеть</button>
+  <button class="buttonC">Убрать улики</button>
+  <form id="form" class="form" method="post">
+    <label for="input"></label><input id="input" class="formInput" required type="url"
+                                      placeholder="вставить ссылку на фото директора">
+    <button id="submit" type="submit">Заказать</button>
+  </form>
 </div>
 <section><img id="section" src='https://workinnet.ru/wp-content/uploads/2020/09/nachalnik.jpg' alt="img"/>
-    <audio id="audio" src="sound/vyistrel.wav"></audio>
+  <audio id="audio" src="sound/vyistrel.wav"></audio>
+  <audio id="audioL" src="sound/taka-lyubov.wav"></audio>
 </section>
 <script type="text/javascript">
-    let body = document.querySelector('section')
-    body.addEventListener("click", function (e) {
-        let body = document.querySelector('body')
-        let bullet = document.createElement('span')
-        let x = e.offsetX;
-        let y = e.offsetY;
-        bullet.style.left = x + 'px'
-        bullet.style.top = y + 'px'
-        body.appendChild(bullet)
-        let audio = document.getElementById('audio');
-        audio.play()
+  let body = document.querySelector('section')
+  body.addEventListener("click", function (e) {
+    let body = document.querySelector('body')
+    let bullet = document.createElement('span')
+    let x = e.offsetX;
+    let y = e.offsetY;
+    bullet.style.left = x + 'px'
+    bullet.style.top = y + 'px'
+    body.appendChild(bullet)
+    let audio = document.getElementById('audio');
+    audio.play()
 
-        const buttonL = document.querySelector('.buttonL')
-        const buttonN = document.querySelector('.buttonN')
-        const buttonC = document.querySelector('.buttonC')
-        // const span = document.querySelectorAll('span')
 
-        buttonL.addEventListener('click', function () {
-            bullet.style.background = "url('./image/heart.png')"
-        });
-        buttonN.addEventListener('click', () => bullet.style.background = "")
-        buttonC.addEventListener('click', () => bullet.remove())
-    })
-    let submit = document.querySelector('#form')
-    submit.addEventListener('submit', function (e) {
-        e.preventDefault()
-        let body = document.querySelector('#section')
-        let input = document.querySelector('#input')
-        body.src = input.value
-        input.value = ''
-    })
+    const buttonL = document.querySelector('.buttonL')
+    const buttonN = document.querySelector('.buttonN')
+    const buttonC = document.querySelector('.buttonC')
+    // const span = document.querySelectorAll('span')
+
+    buttonL.addEventListener('click', function () {
+      bullet.style.background = "url('./image/heart.png')"
+      bullet.style.width = '60px'
+      bullet.style.height = '60px'
+      let audioL = document.getElementById('audioL');
+      audioL.play()
+
+    });
+    buttonN.addEventListener('click', () => bullet.style.background = "")
+    buttonC.addEventListener('click', () => bullet.remove())
+  })
+  let submit = document.querySelector('#form')
+  submit.addEventListener('submit', function (e) {
+    e.preventDefault()
+    let body = document.querySelector('#section')
+    let input = document.querySelector('#input')
+    body.src = input.value
+    input.value = ''
+  })
 </script>
 </body>
 </html>
