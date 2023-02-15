@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ShootTheBoss</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="button">
+        <button class="buttonL">Любить</button>
+        <button class="buttonN">Ненавидеть</button>
+        <button class="buttonC">Очистить</button>
+    </div>
+<section>
+    <audio id="audio" src="sound/vyistrel.wav" autoplay="false"></audio>
+</section>
+<script type="text/javascript">
+    let body = document.querySelector('section')
+    body.addEventListener("click", function (e) {
+        let body = document.querySelector('body')
+        let bullet = document.createElement('span')
+        let x = e.offsetX;
+        let y = e.offsetY;
+        bullet.style.left = x + 'px'
+        bullet.style.top = y + 'px'
+        body.appendChild(bullet)
+        let audio = document.getElementById('audio');
+        audio.play()
+
+        const buttonL = document.querySelector('.buttonL')
+        const buttonN = document.querySelector('.buttonN')
+        const buttonC = document.querySelector('.buttonC')
+        const span = document.querySelectorAll('span')
+
+        buttonL.addEventListener('click', function () {
+            bullet.style.background = "url('./image/heart.png')"
+        });
+        buttonN.addEventListener('click', () => bullet.style.background = "")
+        buttonC.addEventListener('click', () => bullet.remove())
+
+    })
+
+</script>
+</body>
+</html>
