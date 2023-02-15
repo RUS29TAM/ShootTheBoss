@@ -1,14 +1,14 @@
 'use strict'
-const buttonL = document.querySelector('.buttonL')
-const buttonN = document.querySelector('.buttonN')
-const buttonC = document.querySelector('.buttonC')
-let submit = document.querySelector('#form')
-let audio = document.getElementById('audio');
-let audioU = document.getElementById('audioU');
-let audioL = document.getElementById('audioL');
-let audioS = document.getElementById('audioS');
-let audioSV = document.getElementById('audioSV');
-let body = document.querySelector('section')
+const buttonLove = document.querySelector('.buttonLove')
+const buttonHate = document.querySelector('.buttonHate')
+const buttonProofs = document.querySelector('.buttonProofs')
+const submit = document.querySelector('#form')
+const audio1 = document.getElementById('audio-1');
+const audio2 = document.getElementById('audio-2');
+const audio3 = document.getElementById('audio-3');
+const audio4 = document.getElementById('audio-4');
+const audio5 = document.getElementById('audio-5');
+const body = document.querySelector('section')
 
 body.addEventListener("click", function (e) {
   let body = document.querySelector('body')
@@ -18,56 +18,56 @@ body.addEventListener("click", function (e) {
   bullet.style.left = x + 'px'
   bullet.style.top = y + 'px'
   body.appendChild(bullet)
-  audio.play()
+  audio1.play()
 
-  buttonL.addEventListener('click', function () {
+  buttonLove.addEventListener('click', function () {
     bullet.style.background = "url('./image/heart.png')"
     bullet.style.width = '60px'
     bullet.style.height = '60px'
   });
 
-  buttonL.addEventListener('mouseover', function () {
-    audioL.play()
-    buttonL.removeEventListener('mouseover', function () {
-      audioL.play()
+  buttonLove.addEventListener('mouseover', function () {
+    audio2.play()
+    buttonLove.removeEventListener('mouseover', function () {
+      audio2.play()
     })
   })
 
-  buttonL.addEventListener('mouseleave', function () {
-    audioL.pause();
-    audioL.currentTime = 0;
+  buttonLove.addEventListener('mouseleave', function () {
+    audio2.pause();
+    audio2.currentTime = 0;
   })
 
-  buttonN.addEventListener('click', function () {
+  buttonHate.addEventListener('click', function () {
     bullet.style.background = ""
-    audioS.play()
+    audio3.play()
   })
-  buttonN.addEventListener('mouseover', function () {
-    audioS.play()
-    buttonN.removeEventListener('mouseover', function () {
-      audioS.play()
+  buttonHate.addEventListener('mouseover', function () {
+    audio3.play()
+    buttonHate.removeEventListener('mouseover', function () {
+      audio3.play()
     })
   })
-  buttonN.addEventListener('mouseleave', function () {
-    audioS.pause();
-    audioS.currentTime = 0;
+  buttonHate.addEventListener('mouseleave', function () {
+    audio3.pause();
+    audio3.currentTime = 0;
   })
 
-  buttonC.addEventListener('click', function () {
+  buttonProofs.addEventListener('click', function () {
     bullet.remove()
   })
 });
 
-buttonC.addEventListener('mouseover', function () {
-  audioU.play()
-  buttonC.removeEventListener('mouseover', function () {
-    audioU.play()
+buttonProofs.addEventListener('mouseover', function () {
+  audio5.play()
+  buttonProofs.removeEventListener('mouseover', function () {
+    audio5.play()
   })
 })
 
-buttonC.addEventListener('mouseleave', function () {
-  audioU.pause();
-  audioU.currentTime = 0;
+buttonProofs.addEventListener('mouseleave', function () {
+  audio5.pause();
+  audio5.currentTime = 0;
 })
 
 submit.addEventListener('submit', function (e) {
@@ -76,5 +76,5 @@ submit.addEventListener('submit', function (e) {
   let input = document.querySelector('#input')
   body.src = input.value
   input.value = ''
-  audioSV.play()
+  audio4.play()
 })
