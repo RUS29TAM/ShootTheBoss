@@ -45,7 +45,7 @@ span {
     background-size: cover;
     background-position: center;
     pointer-events: none;
-    transform: translate(-12px, 12px);
+    transform: translate(0, 25px);
 }
 
 button {
