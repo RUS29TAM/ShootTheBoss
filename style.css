@@ -8,9 +8,9 @@
 h1 {
     color: white;
 }
+
 input {
     width: 250px;
-
 }
 
 body {
@@ -25,6 +25,7 @@ img {
     background-size: cover;
     background-position: center;
 }
+
 section {
     position: relative;
     width: 100%;
@@ -32,7 +33,7 @@ section {
     cursor: url("image/prc.png"), pointer;
     background-size: cover;
     background-position: center;
-    }
+}
 
 span {
     position: absolute;
@@ -63,6 +64,7 @@ button {
     align-items: center;
     background: rgb(70, 70, 70);
 }
+
 button:hover {
     background-color: #caeaf6;
 }
