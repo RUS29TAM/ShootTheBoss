@@ -7,12 +7,17 @@
 </head>
 <body>
     <div class="button">
+        <h1>Пристрели своего директора</h1>
         <button class="buttonL">Любить</button>
         <button class="buttonN">Ненавидеть</button>
         <button class="buttonC">Очистить</button>
+        <form id="form" class="form" method="post">
+            <label for="input"></label><input id="input" class="formInput" required type="url" placeholder="вставить ссылку на фото директора">
+            <button id="submit" type="submit">Отправить</button>
+        </form>
     </div>
-<section>
-    <audio id="audio" src="sound/vyistrel.wav" autoplay="false"></audio>
+<section><img id="section" src='https://workinnet.ru/wp-content/uploads/2020/09/nachalnik.jpg' alt="img"/>
+    <audio id="audio" src="sound/vyistrel.wav" ></audio>
 </section>
 <script type="text/javascript">
     let body = document.querySelector('section')
@@ -30,16 +35,22 @@
         const buttonL = document.querySelector('.buttonL')
         const buttonN = document.querySelector('.buttonN')
         const buttonC = document.querySelector('.buttonC')
-        const span = document.querySelectorAll('span')
+        // const span = document.querySelectorAll('span')
 
         buttonL.addEventListener('click', function () {
             bullet.style.background = "url('./image/heart.png')"
         });
         buttonN.addEventListener('click', () => bullet.style.background = "")
         buttonC.addEventListener('click', () => bullet.remove())
-
     })
-
+    let submit = document.querySelector('#form')
+    submit.addEventListener('submit', function (e) {
+        e.preventDefault()
+        let body = document.querySelector('#section')
+        let input = document.querySelector('#input')
+        body.src = input.value
+        input.value = ''
+    })
 </script>
 </body>
 </html>

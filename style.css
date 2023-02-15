@@ -5,17 +5,31 @@
     color: black;
 }
 
+h1 {
+    color: white;
+}
+input {
+    width: 250px;
+
+}
+
 body {
     overflow: hidden;
     min-height: 100vh;
 }
 
+img {
+    width: 100%;
+    height: 100vh;
+    position: center;
+    background-size: cover;
+    background-position: center;
+}
 section {
     position: relative;
     width: 100%;
     height: 100vh;
     cursor: url("image/prc.png"), pointer;
-    background: url("image/zamn.jpg");
     background-size: cover;
     background-position: center;
     }
@@ -28,7 +42,7 @@ span {
     background-size: cover;
     background-position: center;
     pointer-events: none;
-    transform: translate(0, 25px);
+    transform: translate(0, 35px);
 }
 
 button {
